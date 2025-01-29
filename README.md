@@ -114,7 +114,7 @@ Steps
   - Fill the partition with zero bytes.
 
     - The command below uses "screen" to launch a background screen session, so that you can exit your SSH shell without terminating the running process.
-    - The command below uses "nice -n xx" to prevent dd from interfering with the NAS's other processes. Niceness -n 0 is default normal priority, -n 19 is maximum niceness. Resist the temptation to lower the nice value to something less nice. Doing so won't make it much speedier, yet it would mess up other processes on the Synology.
+    - The command below uses "nice -n xx" to prevent dd from interfering with the NAS's other processes. -n 0 is default normal priority, -n 19 is maximum niceness. Resist the temptation to lower the nice value to something less nice. Doing so won't make it much speedier, yet it would mess up other processes on the Synology.
     - The command below uses "dd" to directly copy an infinite stream of zeroes to a file named "zerofile.dat" on the USB drive. It will continue doing this until it runs out of disk space or gets some other kind of error. **Ensure that you enter the correct name of the USB drive that was learned in the steps above!** Also, resist the temptation to change the command to write zeroes directly to /dev/sdr1, since that messes up the partition and prevents the progress from being visible in the Synology control panel.
 
             screen nice -n 19 dd if=/dev/zero of=/volumeUSB1/usbshare/zerofile.dat status=progress
