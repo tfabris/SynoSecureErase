@@ -66,7 +66,7 @@ Steps
   While still in the "External Devices" panel:
 
   - With the correct USB drive selected, press the "Format" button, choose the formatting option "Entire Disk", and file system type of "EXT4". Confirm this and wait for this quick formatting process to complete.
-  - Though this doesn't **securely** wipe the disk, it ensures the disk has only one partition, the partition is the correct type to accept large files, and the partition is now empty. Now the empty partition can be completely filled with the erasure file we are going to create.
+  - Though this doesn't **securely** wipe the disk, it ensures the disk has only one partition, the partition is the correct type to accept large files, and the partition is empty. Now the empty partition can be completely filled with the erasure file we are going to create.
 
 ### Use shell commands to securely erase all empty space on the drive
 
