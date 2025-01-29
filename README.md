@@ -6,7 +6,7 @@ Securely Erasing a USB Disk Attached to a Synology NAS
 Problem
 -------
 
-I have several large-capacity SATA disk drives that I want to securely erase, and I also have a USB3 dock into which I can plug SATA drives. I don't want to quick-format these drives, I want to overwrite the entire disk so that data recovery tools won't easily work on these drives. However, that takes a long time; if I plug the drive into my laptop and format it from there, the laptop has to sit and wait for the job to be done before take it anywhere. I don't want to be tied down to the formatting process.
+I have several large-capacity SATA disk drives that I want to securely erase, and I also have a USB3 dock into which I can plug SATA drives. I don't want to quick-format these drives, I want to overwrite the entire disk so that data recovery tools won't easily work on these drives. However, that takes a long time; if I plug the drive into my laptop and format it from there, the laptop has to sit and wait for the job to be done before I can take it anywhere. I don't want to be tied down to the formatting process.
 
 Solution
 --------
