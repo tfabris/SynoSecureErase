@@ -139,7 +139,7 @@ Steps
          ssh admin@mySynologyName.local   (log back in)
          sudo -s                          (become the super user that launched dd above)
      
-    Here you can optionally do any of the following:
+    Here, you can optionally do any of the following:
 
          top                          (list processes, and find the PID of the dd command)
          q                            (quit the top command)
