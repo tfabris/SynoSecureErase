@@ -119,14 +119,14 @@ Steps
 
             screen nice -n 19 dd if=/dev/zero of=/volumeUSB1/usbshare/zerofile.dat status=progress
 
-  ------------------------------------------------------------------------
+    ------------------------------------------------------------------------
 
-  > [!NOTE]
-  > Resist the temptation to change the command to write zeroes directly to the parent drive (such as /dev/sdr1 in my example) instead of a data file. Writing directly to the drive will mess up the partition's file system and prevent you from being able to monitor the progress via the External Devices control panel. I have also noticed it causes more negative effects on the rest of the Synology system, not sure why.
+    > [!NOTE]
+    > Resist the temptation to change the command to write zeroes directly to the parent drive (such as /dev/sdr1 in my example) instead of a data file. Writing directly to the drive will mess up the partition's file system and prevent you from being able to monitor the progress via the External Devices control panel. I have also noticed it causes more negative effects on the rest of the Synology system, not sure why.
 
-  ------------------------------------------------------------------------
+    ------------------------------------------------------------------------
 
-  After executing the command, a line of text showing the progress will appear, and will continuously update the screen session with its progress, thanks to the "status=progress" parameter. Though it doesn't show a progress bar, you can see the number of gigabytes copied so far, and its speed.
+    After executing the command, a line of text showing the progress will appear, and will continuously update the screen session with its progress, thanks to the "status=progress" parameter. Though it doesn't show a progress bar, you can see the number of gigabytes copied so far, and its speed.
 
   - You can close and terminate your SSH window now, and dd will keep running in the background.
 
