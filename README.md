@@ -27,9 +27,9 @@ I'm using DSM version 6.2 on my Synology, so the procedure might differ if you a
 
 ### Drawbacks
 
-For large disks, it can still take a long time to run.
+For large disks, it can still take a long time to run. In my case, some of my larger disks (multiple terabytes) are taking days to erase.
 
-Though this solution tries to use the Linux "nice" command to prevent it from hogging the CPU, in my experience this sometimes still makes the Synology slow down a little bit. Specific errors that I saw were that my Time Machine backups to the Synology shared network drive would intermittently fail, and the Surveillance Station "Live Broadcast" feature glitched sometimes when streaming to YouTube. I'm not sure if this slowness was because of the CPU processing of the "dd" command, or if it's because of contention on the system bus from all the USB I/O that's happening. Also, it didn't seem to happen every time, so the disk drive itself might be a factor. Not sure.
+Though this solution tries to use the Linux "nice" command to prevent it from hogging the CPU, in my experience this sometimes still makes the Synology slow down a little bit. Specific errors that I saw were that my Time Machine backups to the Synology would intermittently fail, and the Surveillance Station "Live Broadcast" feature glitched sometimes when streaming to YouTube. I'm not sure if this slowness was because of the CPU processing of the "dd" command, or if it's because of contention on the system bus from all the USB I/O that's happening. Also, it didn't seem to happen every time, so the disk drive itself might be a factor. Not sure.
 
 Also, this process has a size limit of about 16 terabytes. That's because the EXT4 file system has a 16 terabyte file size limit. This is OK for my current purposes, since I don't yet have any disks quite that big yet, but I'm starting to get close. If I get something bigger, I'll need to improve this procedure.
 
@@ -47,7 +47,7 @@ Steps
 
   - Open the "Package Center", and press its "Settings" button in the upper-right corner. In the "Package Sources" tab, click "Add". Give it a Name of "SynoCommunity" and a Location of "https://packages.synocommunity.com/", and then confirm through its prompts.
   - In the Package Center, select the "Community" tab, and ensure the package called "SynoCli Network Tools" is installed on your NAS.
-  - This will install the "screen" command, among other things, which we'll need later.
+  - This will install the "screen" command, which we'll need later.
 
 ### Attach your disk to the Synology, using a USB attachment of some kind
 
@@ -59,7 +59,7 @@ Steps
 
   - Open "Control Panel", navigate to "External Devices", and select the USB disk drive that you plugged in.
   - Expand the details of the disk drive by pressing the ⋁ symbol.
-  - **Ensure that it looks like the correct device and size.** If there is no USB disk drive found, then the disk drive may be bad, or your USB interface or cable may be bad. If it doesn't look like the correct size, maybe you're looking at the wrong disk, though keep in mind that the External Devices screen will list a lower number than the marketing-speak that's printed on the disk drive label, for example, my "1TB" drive is actually just 916GB in the External Devices screen. In any case, if things don't look correct, stop and troubleshoot this if needed. You don't want to securely erase the wrong disk!
+  - **Ensure that it looks like the correct device and size.** If there is no USB disk drive found, then the disk drive may be bad, or your USB interface or cable may be bad. If it doesn't look like the correct size, maybe you're looking at the wrong disk, though keep in mind that the External Devices screen will list a lower number than the marketing-speak that's printed on the disk drive label, for example, my "1TB" drive is actually just 916GB in the External Devices screen. In any case, if things don't look correct, stop and troubleshoot this if needed. You don't want to erase the wrong disk!
 
 ### Quick-format the attached disk
 
@@ -95,12 +95,12 @@ Steps
          "/dev/sdr"    <- System disk drive name ("sd" for SATA drive, "r" for drive letter R)
          "/dev/sdr1"   <- Partition name on that drive ("1" for the first partition).
 
-    ---
+    ------------------------------------------------------------------------
     **IMPORTANT:** Your results may have different names! Such as "sds" instead of "sdr", or "volumeUSB2" instead of "volumeUSB1". Remember the names, whatever they turn out to be, and replace those names in all of the following commands with the correct ones.
 
     Failing to replace the names correctly will result in unexpected errors, or worse, erasing a disk that you didn't mean to erase!
 
-    ---
+    ------------------------------------------------------------------------
 
   - Check that the disk drive size is the expected correct size:
 
