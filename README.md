@@ -130,7 +130,7 @@ Steps
 
   After executing the command, a line of text showing the progress will appear, and will continuously update the screen session with its progress, thanks to the "status=progress" parameter. Though it doesn't show a progress bar, you can see the number of gigabytes copied so far, and its speed.
 
-  - You can close and terminate your SSH window now, and dd will keep running in the background.
+  - You can close and terminate your SSH window now, and dd will keep running in the background, thanks to the "screen" command we used.
 
   - You can monitor the progress via the Synology control panel. Under "External Devices" if you expand the disk drive details, you can see the "Used/Total Size" value changing. Once the "Used" number equals the "Total Size" number, the drive is done being filled.
 
